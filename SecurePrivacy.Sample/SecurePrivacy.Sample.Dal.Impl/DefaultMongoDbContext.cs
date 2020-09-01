@@ -1,6 +1,5 @@
 ﻿using Dal.Impl;
 using Dal.Impl.Configurations;
-using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;

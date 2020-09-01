@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
@@ -41,7 +38,7 @@ namespace WebApi.Filters
             {
                 case DalException dalException:
                     _logger.LogError(dalException, _DalError);
-                    context.Result = CreateErrorResponse(_DalError);
+                    context.Result = CreateErrorResponse($"{_DalError}{Environment.NewLine}{dalException.Message}");
                     context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
 
@@ -53,7 +50,7 @@ namespace WebApi.Filters
 
                 default:
                     _logger.LogCritical(context.Exception, _FatalError);
-                    context.Result = CreateErrorResponse(_FatalError);
+                    context.Result = CreateErrorResponse($"{_FatalError}{Environment.NewLine}{context.Exception.Message}");
                     context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }

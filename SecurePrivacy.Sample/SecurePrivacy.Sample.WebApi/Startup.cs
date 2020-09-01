@@ -12,7 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
-using SecurePrivacy.Sample.Bll.Impl;
+using SecurePrivacy.Sample.Bll.Impl.services;
+using SecurePrivacy.Sample.Bll.Services;
 using SecurePrivacy.Sample.Dal.Impl;
 using SecurePrivacy.Sample.Dal.Repositories;
 using Serilog;
@@ -48,10 +49,11 @@ namespace SecurePrivacy.Sample.WebApi
             });
             services.AddAutoMapper(
                 typeof(Startup).Assembly,
-                typeof(Class1).Assembly,
+                typeof(StuffService).Assembly,
                 typeof(DatabaseConfiguration).Assembly);
 
             // BLL
+            services.TryAddTransient<IStuffService, StuffService>();
 
             // DAL
             services.TryAddTransient<IStuffRepository, StuffRepository>();

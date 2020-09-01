@@ -6,4 +6,9 @@
     <RootNamespace>SecurePrivacy.Sample.Bll.Impl</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SecurePrivacy.Sample.Bll\Bll.csproj" />
+    <ProjectReference Include="..\SecurePrivacy.Sample.Dal\Dal.csproj" />
+  </ItemGroup>
+
 </Project>
