@@ -45,9 +45,11 @@ namespace SecurePrivacy.Sample.WebApi.IntegrationTests.Factory
                 })
                 .ConfigureTestServices(services =>
                 {
+                    services.AddHttpClient();
                     services.PostConfigure<DatabaseConfiguration>((config) => config.StuffCollectionName = CollectionName); // We configure a specific collection name for the Integration Tests
                 })
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .UseEnvironment(_IntegrationTestsEnvironment);
         }
     }
 }

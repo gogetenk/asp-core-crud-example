@@ -51,7 +51,6 @@ namespace WebApi.Filters
                 _logger.LogDebug($"[Transaction] Aborting transaction [ID: {_session.ServerSession.Id}]");
                 await _session.AbortTransactionAsync();
             }
-
         }
     }
 }

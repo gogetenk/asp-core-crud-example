@@ -24,12 +24,14 @@ namespace SecurePrivacy.Sample.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Env { get; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            Env = env;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -45,7 +47,8 @@ namespace SecurePrivacy.Sample.WebApi
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo() { Title = "Stuff API", Version = "v1" });
+                if (Env.EnvironmentName != "IntegrationTests")
+                    c.SwaggerDoc("v1", new OpenApiInfo() { Title = "Stuff API", Version = "v1" });
             });
             services.AddAutoMapper(
                 typeof(Startup).Assembly,

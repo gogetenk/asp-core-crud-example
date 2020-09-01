@@ -20,7 +20,7 @@ namespace SecurePrivacy.Sample.WebApi.IntegrationTests.Resources
         public const string _stuffEndpoint = "stuff";
         private static MongoClient _mongoClient;
 
-        public StuffResourceTest(WebApplicationFactory<Startup> factory) : base(factory)
+        public StuffResourceTest(IntegrationTestsApplicationFactory factory) : base(factory)
         {
             // We instantiate the mongo client only once for all the tests
             if (_mongoClient is null)
