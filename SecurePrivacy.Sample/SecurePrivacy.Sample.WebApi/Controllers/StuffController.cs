@@ -7,7 +7,7 @@ using SecurePrivacy.Sample.Dto;
 namespace SecurePrivacy.Sample.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/stuff")]
     public class StuffController : ControllerBase
     {
         private readonly ILogger<StuffController> _logger;
@@ -18,6 +18,7 @@ namespace SecurePrivacy.Sample.WebApi.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(200, Type = typeof(List<StuffDto>))]
         public async Task<IActionResult> Get()
         {
             _logger.LogInformation("GET operation started.");
@@ -25,24 +26,27 @@ namespace SecurePrivacy.Sample.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post()
+        [ProducesResponseType(201, Type = typeof(StuffDto))]
+        public async Task<IActionResult> Post(StuffDto stuff)
         {
             _logger.LogInformation("GET operation started.");
             return Created("", new StuffDto());
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put()
+        [ProducesResponseType(204)]
+        public async Task<IActionResult> Put(string id, StuffDto stuff)
         {
             _logger.LogInformation("GET operation started.");
-            return Ok(new StuffDto());
+            return NoContent();
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete()
+        [ProducesResponseType(204)]
+        public async Task<IActionResult> Delete(string id)
         {
             _logger.LogInformation("GET operation started.");
-            return Ok();
+            return NoContent();
         }
     }
 }
