@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "SecurePrivacy.Sample.WebApi\WebApi.csproj", "{D9182D7D-5BAC-4604-9263-BA411933A291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\SecurePrivacy.Sample.WebApi\WebApi.csproj", "{D9182D7D-5BAC-4604-9263-BA411933A291}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Solution Items", "00 - Solution Items", "{B6D08E67-41DC-44DA-8E5D-8D2738EA28DC}"
 EndProject
@@ -13,27 +13,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - BLL", "03 - BLL", "{76
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Web", "04 - Web", "{96F13DF5-5BBB-467D-999C-69BC6C3D6BC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.IntegrationTests", "SecurePrivacy.Sample.WebApi.IntegrationTests\WebApi.IntegrationTests.csproj", "{2DF6C007-679A-42E6-8415-BD7494B23575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.IntegrationTests", "test\SecurePrivacy.Sample.WebApi.IntegrationTests\WebApi.IntegrationTests.csproj", "{2DF6C007-679A-42E6-8415-BD7494B23575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll.Impl", "SecurePrivacy.Sample.Bll.Impl\Bll.Impl.csproj", "{6688CFBF-EBD3-40D7-A058-F4BD0B81E182}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll.Impl", "src\SecurePrivacy.Sample.Bll.Impl\Bll.Impl.csproj", "{6688CFBF-EBD3-40D7-A058-F4BD0B81E182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll", "SecurePrivacy.Sample.Bll\Bll.csproj", "{CCDCB7D9-1D1E-48C4-A97F-9B5085C13CF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll", "src\SecurePrivacy.Sample.Bll\Bll.csproj", "{CCDCB7D9-1D1E-48C4-A97F-9B5085C13CF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impl", "Impl", "{149342D7-137B-4E1D-911E-4D11C929C673}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impl", "Impl", "{D936876A-2683-4608-888E-819E7AEC2DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal.Impl", "SecurePrivacy.Sample.Dal.Impl\Dal.Impl.csproj", "{E9FA66A1-8A87-4251-B6E3-39ECBEEBC28D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal.Impl", "src\SecurePrivacy.Sample.Dal.Impl\Dal.Impl.csproj", "{E9FA66A1-8A87-4251-B6E3-39ECBEEBC28D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "SecurePrivacy.Sample.Dal\Dal.csproj", "{568951B3-20BA-416E-AB1E-4DA9C9A2A914}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "src\SecurePrivacy.Sample.Dal\Dal.csproj", "{568951B3-20BA-416E-AB1E-4DA9C9A2A914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "SecurePrivacy.Sample.Dto\Dto.csproj", "{F12C6F7D-53A0-4980-B126-C16BBDBE4EA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "src\SecurePrivacy.Sample.Dto\Dto.csproj", "{F12C6F7D-53A0-4980-B126-C16BBDBE4EA6}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E4A5A412-81D3-4B7A-82EE-687C1B3D84C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Model", "01 - Model", "{A2664A3C-B16C-470B-A091-6C5840C52A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "SecurePrivacy.Sample.Model\Model.csproj", "{375E261B-0B46-4188-AE08-1900BDB26055}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "src\SecurePrivacy.Sample.Model\Model.csproj", "{375E261B-0B46-4188-AE08-1900BDB26055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

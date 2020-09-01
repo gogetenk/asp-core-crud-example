@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Dal.Impl.Entities;
-using MongoDB.Bson;
 using SecurePrivacy.Sample.Model;
 
 namespace Dal.Impl.MappingProfiles

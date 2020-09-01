@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SecurePrivacy.Sample.Model
+﻿namespace SecurePrivacy.Sample.Model
 {
     public class Stuff
     {
