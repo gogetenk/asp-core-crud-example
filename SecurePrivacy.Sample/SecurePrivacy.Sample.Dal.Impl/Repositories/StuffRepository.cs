@@ -15,6 +15,7 @@ namespace Dal.Impl.Repositories
 {
     public class StuffRepository : RepositoryBase, IStuffRepository
     {
+        private readonly IMapper _mapper;
         private readonly IClientSessionHandle _session;
         private readonly DatabaseConfiguration _config;
         protected override string CollectionName => _config.StuffCollectionName;
@@ -22,6 +23,7 @@ namespace Dal.Impl.Repositories
         public StuffRepository(IMongoDbContext mongoDbContext, ILogger<RepositoryBase> logger, IMapper mapper, IOptionsSnapshot<DatabaseConfiguration> config, IClientSessionHandle session)
             : base(mongoDbContext, logger, mapper)
         {
+            _mapper = mapper;
             _session = session;
             _config = config.Value;
         }
@@ -34,8 +36,9 @@ namespace Dal.Impl.Repositories
         public async Task<Stuff> Insert(Stuff entity)
         {
             var collection = GetCollection<StuffEntity>();
-            await collection.InsertOneAsync(_session, Mapper.Map<StuffEntity>(entity));
-            return entity;
+            var dbEntity = _mapper.Map<StuffEntity>(entity);
+            await collection.InsertOneAsync(_session, dbEntity);
+            return _mapper.Map<Stuff>(dbEntity);
         }
 
         /// <summary>
@@ -54,7 +57,7 @@ namespace Dal.Impl.Repositories
                 .Where(x => x.Id == objectId)
                 .FirstOrDefaultAsync();
 
-            return Mapper.Map<Stuff>(results);
+            return _mapper.Map<Stuff>(results);
         }
 
         /// <summary>
@@ -63,7 +66,7 @@ namespace Dal.Impl.Repositories
         /// <param name="entity"></param>
         public async Task<bool> Update(string id, Stuff entity)
         {
-            var dbEntity = Mapper.Map<StuffEntity>(entity);
+            var dbEntity = _mapper.Map<StuffEntity>(entity);
             var collection = GetCollection<StuffEntity>();
             if (!ObjectId.TryParse(id, out ObjectId objectId))
                 throw new DalException("The object id is not well formated");
