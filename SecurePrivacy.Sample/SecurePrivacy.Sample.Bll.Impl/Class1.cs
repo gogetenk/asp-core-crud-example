@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SecurePrivacy.Sample.Bll.Impl
+﻿namespace SecurePrivacy.Sample.Bll.Impl
 {
     public class Class1
     {
