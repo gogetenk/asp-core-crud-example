@@ -22,6 +22,7 @@ services:
     ports:
       - 27017:27017
     volumes:
+      - ./data/mongodb:/docker-entrypoint-initdb.d:ro
       - ./data/mongodb/mongod.conf:/etc/mongod.conf
     command:
       - -f

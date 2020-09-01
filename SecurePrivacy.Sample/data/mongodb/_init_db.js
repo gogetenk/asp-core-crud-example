@@ -1,0 +1,1 @@
+sleep(15000); // Used in order to let the replicaset to warm up 
