@@ -1,6 +1,0 @@
-﻿namespace SecurePrivacy.Sample.Dal
-{
-    public class Class1
-    {
-    }
-}

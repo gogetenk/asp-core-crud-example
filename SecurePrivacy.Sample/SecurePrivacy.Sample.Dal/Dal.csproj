@@ -6,4 +6,8 @@
     <RootNamespace>SecurePrivacy.Sample.Dal</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SecurePrivacy.Sample.Model\Model.csproj" />
+  </ItemGroup>
+
 </Project>

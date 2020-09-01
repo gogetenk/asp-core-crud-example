@@ -21,21 +21,21 @@ namespace SecurePrivacy.Sample.WebApi.Controllers
         public async Task<IActionResult> Get()
         {
             _logger.LogInformation("GET operation started.");
-            return Ok(new List<Stuff>());
+            return Ok(new List<StuffDto>());
         }
 
         [HttpPost]
         public async Task<IActionResult> Post()
         {
             _logger.LogInformation("GET operation started.");
-            return Created("", new Stuff());
+            return Created("", new StuffDto());
         }
 
         [HttpPut]
         public async Task<IActionResult> Put()
         {
             _logger.LogInformation("GET operation started.");
-            return Ok(new Stuff());
+            return Ok(new StuffDto());
         }
 
         [HttpDelete]
