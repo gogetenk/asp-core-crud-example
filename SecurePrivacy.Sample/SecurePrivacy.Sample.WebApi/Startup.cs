@@ -8,13 +8,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 using SecurePrivacy.Sample.Bll.Impl;
 using SecurePrivacy.Sample.Dal.Impl;
 using SecurePrivacy.Sample.Dal.Repositories;
+using Serilog;
 using WebApi.Filters;
+using WebApi.Helpers;
 
 namespace SecurePrivacy.Sample.WebApi
 {
@@ -30,6 +33,9 @@ namespace SecurePrivacy.Sample.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions()
+               .ConfigureByConvention<DatabaseConfiguration>(Configuration);
+
             services.AddControllers(opts =>
             {
                 opts.Filters.Add<ExceptionFilter>();
@@ -53,8 +59,10 @@ namespace SecurePrivacy.Sample.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddSerilog();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -83,7 +91,8 @@ namespace SecurePrivacy.Sample.WebApi
         /// </summary>
         private void AddTransactions(IServiceCollection services)
         {
-            services.TryAddSingleton<IMongoClient>(provider => new MongoClient(provider.GetRequiredService<IOptionsMonitor<DatabaseConfiguration>>().CurrentValue.ConnectionString));
+            services.TryAddSingleton<IMongoClient>(provider =>
+            new MongoClient(provider.GetRequiredService<IOptionsMonitor<DatabaseConfiguration>>().CurrentValue.ConnectionString));
             services.TryAddSingleton<IMongoDbContext>(provider => new DefaultMongoDbContext(provider.GetRequiredService<IOptionsMonitor<DatabaseConfiguration>>().CurrentValue));
             // The session has to be scoped so we get a new one each http request
             services.TryAddScoped<IClientSessionHandle>(provider => provider.GetRequiredService<IMongoClient>().StartSession());

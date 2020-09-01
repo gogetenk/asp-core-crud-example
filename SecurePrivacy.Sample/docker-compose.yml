@@ -6,3 +6,38 @@ services:
     build:
       context: .
       dockerfile: SecurePrivacy.Sample.WebApi/Dockerfile
+    expose:
+      - "5000"
+    ports:
+      - 5000:5000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DatabaseConfiguration__ConnectionString=mongodb://mongo:27017
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: secureprivacy
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongodb/mongod.conf:/etc/mongod.conf
+    command:
+      - -f
+      - "/etc/mongod.conf"
+      - --replSet
+      - rs0
+      - --bind_ip_all
+    healthcheck:
+      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo --quiet) -eq 1
+      interval: 10s
+      start_period: 10s
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
