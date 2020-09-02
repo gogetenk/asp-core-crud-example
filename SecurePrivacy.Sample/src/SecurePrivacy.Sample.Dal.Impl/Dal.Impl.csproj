@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SecurePrivacy.Sample.Dal.Impl</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pi4kfelw.elz~" />
+    <None Remove="Repositories\RepositoryBase.cs~RF3a16099d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.7" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SecurePrivacy.Sample.Dal\Dal.csproj" />
+  </ItemGroup>
+
+</Project>

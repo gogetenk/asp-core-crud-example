@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SecurePrivacy.Sample.Bll.Impl</AssemblyName>
+    <RootNamespace>SecurePrivacy.Sample.Bll.Impl</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SecurePrivacy.Sample.Bll\Bll.csproj" />
+    <ProjectReference Include="..\SecurePrivacy.Sample.Dal\Dal.csproj" />
+    <ProjectReference Include="..\SecurePrivacy.Sample.Dto\Dto.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SecurePrivacy.Sample.Bll</AssemblyName>
+    <RootNamespace>SecurePrivacy.Sample.Bll</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SecurePrivacy.Sample.Model\Model.csproj" />
+  </ItemGroup>
+
+</Project>

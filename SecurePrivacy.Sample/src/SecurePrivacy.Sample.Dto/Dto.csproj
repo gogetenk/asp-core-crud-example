@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SecurePrivacy.Sample.Dto</AssemblyName>
+    <RootNamespace>SecurePrivacy.Sample.Dto</RootNamespace>
+  </PropertyGroup>
+
+</Project>
