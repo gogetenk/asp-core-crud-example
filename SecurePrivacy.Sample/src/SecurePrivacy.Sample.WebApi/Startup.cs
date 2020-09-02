@@ -36,11 +36,13 @@ namespace SecurePrivacy.Sample.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOptions()
-               .ConfigureByConvention<DatabaseConfiguration>(Configuration);
+            services
+                .AddOptions()
+                .ConfigureByConvention<DatabaseConfiguration>(Configuration);
 
             services.AddControllers(opts =>
             {
+                opts.Filters.Clear();
                 opts.Filters.Add<ExceptionFilter>();
                 opts.Filters.Add<TransactionFilter>();
                 opts.EnableEndpointRouting = true;
@@ -69,22 +71,16 @@ namespace SecurePrivacy.Sample.WebApi
             loggerFactory.AddSerilog();
 
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseHttpsRedirection();
-
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "Stuff API v1");
             });
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

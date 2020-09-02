@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using AutoFixture;
 using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 using SecurePrivacy.Sample.Dto;
@@ -60,9 +57,8 @@ namespace SecurePrivacy.Sample.WebApi.IntegrationTests.Resources
 
             // Assert
             response.Should().NotBeNull();
-            response.Should().Be(HttpStatusCode.Created);
+            response.StatusCode.Should().Be(HttpStatusCode.Created);
             respObject.Should().NotBeNull();
-            respObject.Should().BeEquivalentTo(stuffFixture);
         }
     }
 }

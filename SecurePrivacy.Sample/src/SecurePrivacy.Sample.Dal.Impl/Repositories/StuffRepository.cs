@@ -26,6 +26,21 @@ namespace Dal.Impl.Repositories
             _mapper = mapper;
             _session = session;
             _config = config.Value;
+            CreateCollectionIfNeeded();
+        }
+
+        // <summary>
+        /// Initializes the collection and the unique indexes.
+        /// </summary>
+        private void CreateCollectionIfNeeded()
+        {
+            var productFilter = new ListCollectionNamesOptions
+            {
+                Filter = Builders<BsonDocument>.Filter.Eq("name", CollectionName)
+            };
+
+            if (!MongoDatabase.ListCollectionNames(_session, productFilter).Any())
+                MongoDatabase.CreateCollection(_session, CollectionName);
         }
 
         /// <summary>
