@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\SecurePrivacy.Sample.WebApi\WebApi.csproj", "{D9182D7D-5BAC-4604-9263-BA411933A291}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Solution Items", "00 - Solution Items", "{B6D08E67-41DC-44DA-8E5D-8D2738EA28DC}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - DAL", "02 - DAL", "{D3640B53-245B-4898-8FE2-0924F3238811}"
 EndProject
@@ -15,25 +18,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Web", "04 - Web", "{96
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.IntegrationTests", "test\SecurePrivacy.Sample.WebApi.IntegrationTests\WebApi.IntegrationTests.csproj", "{2DF6C007-679A-42E6-8415-BD7494B23575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll.Impl", "src\SecurePrivacy.Sample.Bll.Impl\Bll.Impl.csproj", "{6688CFBF-EBD3-40D7-A058-F4BD0B81E182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bll.Impl", "src\SecurePrivacy.Sample.Bll.Impl\Bll.Impl.csproj", "{6688CFBF-EBD3-40D7-A058-F4BD0B81E182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll", "src\SecurePrivacy.Sample.Bll\Bll.csproj", "{CCDCB7D9-1D1E-48C4-A97F-9B5085C13CF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bll", "src\SecurePrivacy.Sample.Bll\Bll.csproj", "{CCDCB7D9-1D1E-48C4-A97F-9B5085C13CF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impl", "Impl", "{149342D7-137B-4E1D-911E-4D11C929C673}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impl", "Impl", "{D936876A-2683-4608-888E-819E7AEC2DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal.Impl", "src\SecurePrivacy.Sample.Dal.Impl\Dal.Impl.csproj", "{E9FA66A1-8A87-4251-B6E3-39ECBEEBC28D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dal.Impl", "src\SecurePrivacy.Sample.Dal.Impl\Dal.Impl.csproj", "{E9FA66A1-8A87-4251-B6E3-39ECBEEBC28D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "src\SecurePrivacy.Sample.Dal\Dal.csproj", "{568951B3-20BA-416E-AB1E-4DA9C9A2A914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dal", "src\SecurePrivacy.Sample.Dal\Dal.csproj", "{568951B3-20BA-416E-AB1E-4DA9C9A2A914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "src\SecurePrivacy.Sample.Dto\Dto.csproj", "{F12C6F7D-53A0-4980-B126-C16BBDBE4EA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dto", "src\SecurePrivacy.Sample.Dto\Dto.csproj", "{F12C6F7D-53A0-4980-B126-C16BBDBE4EA6}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E4A5A412-81D3-4B7A-82EE-687C1B3D84C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Model", "01 - Model", "{A2664A3C-B16C-470B-A091-6C5840C52A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "src\SecurePrivacy.Sample.Model\Model.csproj", "{375E261B-0B46-4188-AE08-1900BDB26055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "src\SecurePrivacy.Sample.Model\Model.csproj", "{375E261B-0B46-4188-AE08-1900BDB26055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
