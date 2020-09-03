@@ -1,6 +1,17 @@
 # asp-core-crud-example
 A sample .NET Core project with a MongoDB database with replicaset and transactions enabled.
 
+## Goal
+The goal of this project is to give a solution to the subject below (used for a job interview) :
+```
+Please create a sample .net/C# project that includes the following elements:
+- Basic CRUD functionality for a data structure of your choice.
+- RESTful APIs to expose that functionality with your framework of choice (ASP.NET Web APIs, ASP.NET Core, ServiceStack (preferred), …etc).
+- Uses MongoDB using C# driver.
+- Please demonstrate your usage of one of MongoDB advanced features (aggregation, transactions, indexes, …etc) using C# driver.
+- Please push your code to a Git repository that you can share with us.
+```
+
 ## Project Architecture
 This is a asp core 3.1 web API project with a n-tiers architecture :
 - model layer
